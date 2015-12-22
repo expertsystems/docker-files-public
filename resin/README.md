@@ -1,4 +1,4 @@
-# Resin docker image `Dockerfile`
+# Resin Docker image `Dockerfile`
 [CentOS](https://hub.docker.com/_/centos/) based base image with [Resin](http://caucho.com/products/resin) running on Oracle JDK 8.
 
 Also adds [MySQL Connector/J](http://dev.mysql.com/downloads/connector/j/) 5.1.38 to `/var/resin/webapp-jars`. If you need want to make use of this, make sure to include
