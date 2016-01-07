@@ -24,7 +24,7 @@ WAR files go in the `/var/resin/webapps` directory.
 `RESIN_HOME` points to `/usr/local/share/resin-4.0.40`
 
 ### Logs
-Logs are written to `/var/log/resin/`. You may want to map this volume.
+Logs are written to `/var/log/resin/`. You may want to map this as a volume. (Tip: See [expertsystems/filebeat](https://hub.docker.com/r/expertsystems/filebeat/))
 
 ### Session data
-Session data is written to `/var/resin/resin-data`, so if you want to preserve session data between images, consider mapping this volume.
+Session data is written to `/var/resin/resin-data`, so if you want to preserve session data between images, consider mapping this as a volume.
