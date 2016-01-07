@@ -21,6 +21,4 @@ COPY docker-entrypoint.sh /
 VOLUME ["/var/log"]
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# TODO should be possible to remove   , "-c", "/etc/filebeat/filebeat.yml"]
-# TODO Use environment variable instead CMD ["-e", "-c", "/etc/filebeat/filebeat.yml"]
-CMD ["replace-with-your.logstash-server.com:5044"]
+CMD ["filebeat", "-e"]

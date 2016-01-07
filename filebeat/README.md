@@ -7,10 +7,16 @@ The recommended usage is to make a container from this image the [data volume](h
 for your logs.
 
 ## Parameters
-When launching a container from this image, you need to supply the hostname and port where your Logstash is listening.
+You can pass command line parameters to Filebeat while launching this image, such as 
+```
+docker run --rm -it expertsystems/filebeat --help
+```
+
+Unless you override the configuration file via image or parameters, when launching a container from this image you need 
+to supply the hostname and port where your Logstash is listening as the `LOGSTASH_HOST` environment variable.
 Example:
 ```
-docker run -d --name my-logs expertsystems/filebeat my-logstash.mycompany.com:5044
+docker run -d --name my-logs -e LOGSTASH_HOST=my-logstash.mycompany.com:5044 expertsystems/filebeat
 ```
 
 The corresponding Logstash configuration would be
