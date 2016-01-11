@@ -17,4 +17,15 @@ if [ $LOGSTASH_HOST_COUNT -gt 0 ]; then
   fi
 fi
 
+# Optionally enable TLS/SSL
+if [ "$TLS" == "true" ]; then
+  echo "Enabling TLS/SSL"
+  sed --in-place "s/# tls:/tls:/" /etc/filebeat/filebeat.yml
+  
+  if [ "$INSECURE" == "true" ]; then
+    echo "Allowing insecure TLS/SSL"
+    sed --in-place "s/#  insecure: true/  insecure: true/" /etc/filebeat/filebeat.yml
+  fi
+fi
+
 exec "$@"

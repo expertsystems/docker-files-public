@@ -12,6 +12,8 @@ You can pass command line parameters to Filebeat while launching this image, suc
 docker run --rm -it expertsystems/filebeat --help
 ```
 
+## Logstash host
+
 Unless you override the configuration file via image or parameters, when launching a container from this image you need 
 to supply the hostname and port where your Logstash is listening as the `LOGSTASH_HOST` environment variable.
 Example:
@@ -28,6 +30,12 @@ input {
 
   ...
 ```
+
+## TLS/SSL
+
+To enable TLS/SSL with default configuration, set environment variable `TLS` to `true`. 
+To allow [insecure](https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-configuration-details.html#_insecure)
+TLS/SSL, set `TLS` to `true` and `INSECURE` to `true`.
 
 ## Data volume
 Logs in `/var/log` and one level below (such as `/var/log/myapplication/mylog.log`) are forwarded. Furthermore `/var/log`

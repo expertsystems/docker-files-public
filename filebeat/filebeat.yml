@@ -23,7 +23,11 @@ output:
     # Will be replaced by docker-entrypoint.sh
     hosts: ["LOGSTASH_HOST"]
 
-    # TODO Consider adding TLS support
+    # Set TLS=true for docker-entrypoint.sh to enable TLS
+    # https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-configuration-details.html#configuration-output-tls
+    # tls:
+    #  insecure: true
+
 
   ## Console output (can be used for testing configs)
   # console:
