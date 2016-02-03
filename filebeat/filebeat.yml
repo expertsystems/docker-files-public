@@ -4,16 +4,16 @@ filebeat:
       paths:
         - /var/log/*.*
         - /var/log/*/*.*
-# TODO once Filebeats 1.1.x is released https://github.com/elastic/filebeat/issues/298
-#      exclude_files: ["*.json"] 
-#
-#    -
-#      paths:
-#        - /var/log/*.json
-#        - /var/log/*/*.json
-#
-#      # Tag as JSON to allow configuring filters in Logstash
-#      document_type: json
+      # https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-configuration-details.html#_exclude_files
+      exclude_files: ["\\.json$"] 
+
+    -
+      paths:
+        - /var/log/*.json
+        - /var/log/*/*.json
+
+      # Tag as JSON to allow configuring filters in Logstash
+      document_type: json
 
   registry_file: "/etc/filebeat/registry"
 

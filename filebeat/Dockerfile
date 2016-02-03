@@ -5,9 +5,9 @@ RUN rm -Rf /var/log/anaconda
   
 # Install Filebeat
 # See https://www.elastic.co/downloads/beats/filebeat for current version
-RUN curl -LO https://download.elastic.co/beats/filebeat/filebeat-1.0.1-x86_64.rpm && \
-  yum localinstall -y filebeat-1.0.1-x86_64.rpm && \
-  rm -f filebeat-1.0.1-x86_64.rpm && \
+RUN curl -LO https://download.elastic.co/beats/filebeat/filebeat-1.1.0-x86_64.rpm && \
+  yum localinstall -y filebeat-1.1.0-x86_64.rpm && \
+  rm -f filebeat-1.1.0-x86_64.rpm && \
   yum clean all && \
   rm -f /var/log/yum.log
 
