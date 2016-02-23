@@ -1,6 +1,6 @@
 # Base image with Caucho Resin running on Oracle JDK 8
 
-FROM expertsystems/oracle-jdk8:u66
+FROM expertsystems/oracle-jdk8:u74
 
 # Install Resin
 RUN curl -O http://caucho.com/download/rpm-6.5/4.0.40/x86_64/resin-4.0.40-1.x86_64.rpm && \ 
